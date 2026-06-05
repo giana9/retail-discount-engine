@@ -89,3 +89,11 @@ console.log(`Total Before Discount: $${cartTotal.toFixed(2)}`);
 console.log(`Customer Discount: -$${discountAmount.toFixed(2)}`);
 console.log(`Final Total: $${finalTotal.toFixed(2)}`);
 }
+
+// Product Log After Discount
+console.log("Product Details After Discount:");
+let sampleProduct = products[0];
+
+for (let key in sampleProduct) {
+    console.log(`${key}: ${sampleProduct[key]}`);
+}
