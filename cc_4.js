@@ -31,3 +31,25 @@ let products = [
         inventoryCount: 13
     }
 ];
+
+// Dynamic Discount
+for (let product of products) {
+let discount = 0; // default discount before switch runs
+
+    switch (product.category) {
+        case "electronics":
+            discount = 0.20;
+            break;
+        case "apparel":
+            discount = 0.15;
+            break;
+        case "groceries":
+        case "household":
+            discount = 0.10;
+            break;
+        default:
+            discount = 0;
+    }
+
+product.discountedPrice = product.price - product.price * discount; // product.discountedPrice, not discountedPrice bc we want the new property to apply to each product object
+}
