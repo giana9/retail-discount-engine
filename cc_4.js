@@ -64,3 +64,28 @@ function applyCustomerDiscount(total, customerType) { // used function for clean
         return total;
     }
 }
+
+// Checkout Process
+const customerTypes = ["regular", "student", "senior"];
+
+for (let x = 0; x < 3; x++) // Loops checkout process for 3 customers
+{
+    console.log(`Customer ${x + 1} Checkout:`);
+    let customerType = customerTypes[x]; // 0, 1, 2 = regular, student, senior
+    let cartTotal = 0; // cart starts at 0
+
+for (let product of products) { 
+    if (product.inventoryCount > 0) { // if product is in stock
+        cartTotal += product.discountedPrice; // add the discount
+        product.inventoryCount -= 1; // reduce inventory by 1
+    }
+}
+
+let finalTotal = applyCustomerDiscount(cartTotal, customerType);
+let discountAmount = cartTotal - finalTotal;
+
+console.log(`Customer Type: ${customerType}`);
+console.log(`Total Before Discount: $${cartTotal.toFixed(2)}`);
+console.log(`Customer Discount: -$${discountAmount.toFixed(2)}`);
+console.log(`Final Total: $${finalTotal.toFixed(2)}`);
+}
