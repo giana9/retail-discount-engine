@@ -71,6 +71,7 @@ const customerTypes = ["regular", "student", "senior"];
 for (let x = 0; x < 3; x++) // Loops checkout process for 3 customers
 {
     console.log(`Customer ${x + 1} Checkout:`);
+    console.log("");
     let customerType = customerTypes[x]; // 0, 1, 2 = regular, student, senior
     let cartTotal = 0; // cart starts at 0
 
@@ -88,22 +89,27 @@ console.log(`Customer Type: ${customerType}`);
 console.log(`Total Before Discount: $${cartTotal.toFixed(2)}`);
 console.log(`Customer Discount: -$${discountAmount.toFixed(2)}`);
 console.log(`Final Total: $${finalTotal.toFixed(2)}`);
+console.log("---------------------------------");
 }
 
 // Product Log After Discount
-console.log("Product Details After Discount:");
+console.log("1 Product Details After Discount:");
+console.log("");
 let sampleProduct = products[0];
 
 for (let key in sampleProduct) {
     console.log(`${key}: ${sampleProduct[key]}`);
 }
 
+console.log("---------------------------------");
+
 // Logging All Product Info After Updating Inventory
 console.log("All Product Details After Checkout:");
+console.log("");
 
 for (let product of products) {
     for (let [key, value] of Object.entries(product)) { // Object.entries = keys/values for one product
         console.log(`${key}: ${value}`);
     }
-console.log("-----------------------");
+console.log("---------------------------------");
 }
