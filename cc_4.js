@@ -53,3 +53,14 @@ let discount = 0; // default discount before switch runs
 
 product.discountedPrice = product.price - product.price * discount; // product.discountedPrice, not discountedPrice bc we want the new property to apply to each product object
 }
+
+// Special Customer Discounts
+function applyCustomerDiscount(total, customerType) { // used function for cleaner code (less repetition), instead of just if/else
+    if (customerType === "student") {
+        return total * .95;
+    } else if (customerType === "senior") {
+        return total * .93;
+    } else {
+        return total;
+    }
+}
