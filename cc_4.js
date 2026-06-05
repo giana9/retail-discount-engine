@@ -97,3 +97,13 @@ let sampleProduct = products[0];
 for (let key in sampleProduct) {
     console.log(`${key}: ${sampleProduct[key]}`);
 }
+
+// Logging All Product Info After Updating Inventory
+console.log("All Product Details After Checkout:");
+
+for (let product of products) {
+    for (let [key, value] of Object.entries(product)) { // Object.entries = keys/values for one product
+        console.log(`${key}: ${value}`);
+    }
+console.log("-----------------------");
+}
